@@ -1,17 +1,29 @@
 import React from 'react';
 
+import ItemStat from './ItemStat';
+import MyItemList from './MyItemsList';
+import AvailableOrgs from './AvailableOrgs';
+import DashboardHeader from '../layout/DashboardHeader';
+
 const Dashboard = () => {
   return (
-    <div className='flex flex-grow min-h-screen flex-col'>
-      <div className='flex h-16 items-center shadow z-20'>
-        <div className='flex flex-grow flex-row-reverse px-6 items-center'>
-          <div className='flex border-l border-gray-400 items-center h-8'>
-            <span className='mr-3 ml-6 text-gray-600'>Hello, Username</span>
-            <ion-icon name='contact' size='large'></ion-icon>
+    <div className="flex flex-grow flex-col">
+      <DashboardHeader username="Jamie Christian" />
+      <div className="flex flex-grow flex-col bg-gray-200">
+        <div className="w-full p-8">
+          <div className="flex flex-grow justify-center">
+            <ItemStat title="My Items" />
+            <ItemStat title="Open Items" />
+            <ItemStat title="Organizations" />
+          </div>
+        </div>
+        <div className="w-full p-8">
+          <div className="flex flex-grow justify-center">
+            <MyItemList />
+            <AvailableOrgs />
           </div>
         </div>
       </div>
-      <div className='flex min-h-screen bg-gray-200'>Dashboard</div>
     </div>
   );
 };
