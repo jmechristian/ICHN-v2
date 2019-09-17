@@ -2,8 +2,10 @@ import React from 'react';
 
 const MyItemsList = () => {
   return (
-    <div className="flex flex-grow bg-white shadow mx-6 p-6 rounded">
-      I am the list of items I have claimed!
+    <div className="flex w-2/3 bg-white shadow-md mx-3 p-6 rounded">
+      <div>
+        <span className="text-lg">My Claimed Items</span>
+      </div>
     </div>
   );
 };
