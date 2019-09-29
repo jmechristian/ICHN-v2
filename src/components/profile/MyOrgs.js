@@ -30,10 +30,9 @@ const MyOrgs = props => {
           >
             <div className="text-gray-600">{org.Name}</div>
             <div className="text-red-400">
-              <FontAwesomeIcon
-                icon={faMinusSquare}
-                onClick={removeOrg.bind(this, org.Id)}
-              />
+              <button onClick={removeOrg.bind(this, org.Id)}>
+                <FontAwesomeIcon icon={faMinusSquare} size="2x" />
+              </button>
             </div>
           </li>
         ))}

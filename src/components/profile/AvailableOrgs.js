@@ -29,7 +29,7 @@ const AvailableOrgs = props => {
             <div className="text-gray-600">{org.Name}</div>
             <div className="text-green-400">
               <button onClick={addOrg.bind(this, org.Id)}>
-                <FontAwesomeIcon icon={faPlusSquare} />
+                <FontAwesomeIcon icon={faPlusSquare} size="2x" />
               </button>
             </div>
           </li>
