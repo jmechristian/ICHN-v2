@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { faMinusSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -8,9 +8,14 @@ import { unFollow } from '../../actions/authActions';
 const MyOrgs = props => {
   const dispatch = useDispatch();
 
-  const removeOrg = useCallback(id => {
-    dispatch(unFollow(id));
-  }, []);
+  const { following } = useSelector(state => state.auth);
+
+  const removeOrg = useCallback(
+    id => {
+      dispatch(unFollow(id));
+    },
+    [following]
+  );
 
   return (
     <div className="flex flex-col bg-white shadow-md mx-3 p-6 rounded mb-8">

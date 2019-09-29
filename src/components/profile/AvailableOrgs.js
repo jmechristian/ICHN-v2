@@ -8,9 +8,12 @@ import { followOrg } from '../../actions/authActions';
 const AvailableOrgs = props => {
   const dispatch = useDispatch();
 
-  const addOrg = useCallback(id => {
-    dispatch(followOrg(id));
-  }, []);
+  const addOrg = useCallback(
+    id => {
+      dispatch(followOrg(id));
+    },
+    [dispatch]
+  );
 
   return (
     <div className="flex flex-col bg-white shadow-md mx-3 p-6 rounded mb-8">

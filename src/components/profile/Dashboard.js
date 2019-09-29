@@ -27,7 +27,7 @@ const Dashboard = () => {
     dispatch(getMyNeeds());
     dispatch(getNeeds());
     dispatch(getOrgs());
-  }, [following, orgs]);
+  }, [dispatch]);
 
   return (
     <div className="flex flex-grow flex-col">
