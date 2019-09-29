@@ -9,7 +9,7 @@ import store from './store';
 import AuthLogin from './components/layout/AuthLogin';
 import AuthRegister from './components/layout/AuthRegister';
 import AuthResetPassword from './components/layout/AuthResetPassword';
-import DashboardContainer from './components/profile/DashboardContainer';
+import DashboardContainer from './components/layout/DashboardContainer';
 
 // Check for token
 if (localStorage.jwtToken) {
