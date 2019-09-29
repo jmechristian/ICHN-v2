@@ -34,7 +34,7 @@ const Dashboard = () => {
       <DashboardHeader username={user.unique_name} />
       <div className="flex flex-grow flex-col bg-gray-200 py-6 px-10">
         <div className="w-full mt-4 mb-4">
-          <div className="text-2xl font-semibold text-gray-800 ml-3 mb-8">
+          <div className="text-2xl font-semibold text-gray-800 ml-3 mb-4">
             User Dashboard
           </div>
           <div className="flex flex-grow justify-center">
@@ -58,7 +58,7 @@ const Dashboard = () => {
         <div className="w-full mt-4 mb-4">
           <div className="flex flex-row">
             <div className="flex-grow w-2/3">
-              <MyItemList />
+              <MyItemList items={myNeeds} />
             </div>
             <div className="flex flex-col w-1/3">
               <AvailableOrgs orgs={orgs} />
