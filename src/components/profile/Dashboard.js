@@ -62,7 +62,7 @@ const Dashboard = () => {
             </div>
             <div className="flex flex-col w-1/3">
               <MyOrgs orgs={following} />
-              <AvailableOrgs orgs={orgs} />
+              <AvailableOrgs />
             </div>
           </div>
         </div>
