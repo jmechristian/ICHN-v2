@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -7,6 +7,7 @@ import { followOrg } from '../../actions/authActions';
 
 const AvailableOrgs = props => {
   const dispatch = useDispatch();
+  const { following } = useSelector(state => state.auth);
 
   const addOrg = useCallback(
     id => {
@@ -14,6 +15,8 @@ const AvailableOrgs = props => {
     },
     [dispatch]
   );
+
+  const newArray = following.map(org => org.Id);
 
   return (
     <div className="flex flex-col bg-white shadow-md mx-3 p-6 rounded mb-8">
@@ -27,8 +30,17 @@ const AvailableOrgs = props => {
             className="flex flex-row justify-between border-b-2 py-4"
           >
             <div className="text-gray-600">{org.Name}</div>
-            <div className="text-green-400">
-              <button onClick={addOrg.bind(this, org.Id)}>
+            <div
+              className={`${
+                newArray.lastIndexOf(org.Id)
+                  ? 'text-green-400'
+                  : 'text-gray-300'
+              }`}
+            >
+              <button
+                onClick={addOrg.bind(this, org.Id)}
+                disabled={newArray.lastIndexOf(org.Id) ? false : true}
+              >
                 <FontAwesomeIcon icon={faPlusSquare} size="2x" />
               </button>
             </div>

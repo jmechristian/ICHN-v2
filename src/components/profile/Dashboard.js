@@ -33,7 +33,7 @@ const Dashboard = () => {
     <div className="flex flex-grow flex-col">
       <DashboardHeader username={user.unique_name} />
       <div className="flex flex-grow flex-col bg-gray-200 py-6 px-10">
-        <div className="w-full mt-4 mb-4">
+        <div className="w-full mt-2 mb-4">
           <div className="text-2xl font-semibold text-gray-800 ml-3 mb-4">
             User Dashboard
           </div>
