@@ -18,7 +18,7 @@ const MyOrgs = props => {
   );
 
   return (
-    <div className="flex flex-col bg-white shadow-md mx-3 p-6 rounded mb-8">
+    <div className="flex flex-col bg-white shadow-xl mx-3 p-6 rounded mb-8">
       <div className="w-full border-b-2 pb-6">
         <span className="text-lg">My Organizations</span>
       </div>

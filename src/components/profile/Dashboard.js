@@ -61,8 +61,8 @@ const Dashboard = () => {
               <MyItemList items={myNeeds} />
             </div>
             <div className="flex flex-col w-1/3">
-              <AvailableOrgs orgs={orgs} />
               <MyOrgs orgs={following} />
+              <AvailableOrgs orgs={orgs} />
             </div>
           </div>
         </div>
