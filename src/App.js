@@ -11,6 +11,7 @@ import AuthRegister from './components/layout/AuthRegister';
 import AuthResetPassword from './components/layout/AuthResetPassword';
 import DashboardContainer from './components/layout/DashboardContainer';
 import MyItems from './components/layout/MyItems';
+import OpenItems from './components/layout/OpenItems';
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -53,6 +54,9 @@ class App extends Component {
             </Switch>
             <Switch>
               <Route exact path="/my-items" component={MyItems} />
+            </Switch>
+            <Switch>
+              <Route exact path="/open-items" component={OpenItems} />
             </Switch>
           </div>
         </Router>

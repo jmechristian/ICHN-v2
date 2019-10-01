@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
-    <div className="w-automin-h-screen">
+    <div className="w-auto min-h-screen sm:visible">
       <div className="flex h-16 bg-blue-900 items-center shadow z-20  px-12 ">
         <span className="font-bold uppercase tracking-wider text-white">
           iCanHelpNetwork
@@ -16,19 +17,21 @@ const Sidebar = () => {
           </li>
           <li className="flex py-5 items-center">
             <ion-icon name="apps" size="large"></ion-icon>
-            <span className="ml-2 text-white">My Dashboard</span>
-          </li>
-          <li className="flex py-5 items-center">
-            <ion-icon name="search" size="large"></ion-icon>
-            <span className="ml-2 text-white">Find Organizations</span>
+            <span className="ml-2 text-white">
+              <Link to="/dashboard">My Dashboard</Link>
+            </span>
           </li>
           <li className="flex py-5 items-center">
             <ion-icon name="copy" size="large"></ion-icon>
-            <span className="ml-2 text-white">My Items</span>
+            <span className="ml-2 text-white">
+              <Link to="/my-items">My Items</Link>
+            </span>
           </li>
           <li className="flex py-5 items-center">
             <ion-icon name="people" size="large"></ion-icon>
-            <span className="ml-2 text-white">Open Items</span>
+            <span className="ml-2 text-white">
+              <Link to="/open-items">Open Items</Link>
+            </span>
           </li>
         </ul>
       </div>

@@ -4,25 +4,22 @@ import { useSelector, useDispatch } from 'react-redux';
 import Sidebar from './Sidebar';
 import ItemList from './ItemList';
 import DashboardHeader from './DashboardHeader';
-import { getMyNeeds, releaseNeed } from '../../actions/needsActions';
-import { faMinusSquare } from '@fortawesome/free-solid-svg-icons';
+import { getNeeds, claimNeed } from '../../actions/needsActions';
+import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 
-const MyItems = () => {
-  const { myNeeds } = useSelector(state => state.needs);
+const OpenItems = () => {
+  const { needs } = useSelector(state => state.needs);
   const { user } = useSelector(state => state.auth);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getMyNeeds());
+    dispatch(getNeeds());
   }, [dispatch]);
 
-  const releaseHandler = useCallback(
-    (id, org) => {
-      dispatch(releaseNeed(id, org));
-    },
-    [myNeeds]
-  );
+  const claimHandler = useCallback((id, org) => {
+    dispatch(claimNeed(id, org));
+  }, []);
 
   return (
     <div className="flex flex-row">
@@ -31,12 +28,12 @@ const MyItems = () => {
         <DashboardHeader username={user.unique_name} />
         <div className="bg-gray-200 p-10 h-full">
           <ItemList
-            items={myNeeds}
-            buttonName={'Release'}
-            listType={'My Claimed Needs'}
-            iconType={faMinusSquare}
-            textColor={'text-red-400'}
-            onClick={releaseHandler}
+            items={needs}
+            buttonName={'Claim'}
+            listType={'Open Needs'}
+            iconType={faPlusSquare}
+            textColor={'text-green-400'}
+            onClick={claimHandler}
           />
         </div>
       </div>
@@ -44,4 +41,4 @@ const MyItems = () => {
   );
 };
 
-export default MyItems;
+export default OpenItems;

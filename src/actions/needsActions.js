@@ -1,13 +1,6 @@
 import axios from 'axios';
 import { Route } from '../utils/config';
-import {
-  GET_NEEDS,
-  GET_ERRORS,
-  GET_ITEM,
-  CLAIM_NEED,
-  GET_MY_NEED,
-  RELEASE_NEED
-} from './types';
+import { GET_NEEDS, GET_ERRORS, GET_ITEM, GET_MY_NEED } from './types';
 
 //Get list of needs from Org the User follows
 export const getNeeds = () => dispatch => {
@@ -49,12 +42,7 @@ export const getDetails = id => dispatch => {
 export const claimNeed = (needId, orgId) => dispatch => {
   axios
     .get(`${Route}/Need/ClaimNeed?needId=${needId}&orgId=${orgId}`)
-    .then(res =>
-      dispatch({
-        type: CLAIM_NEED,
-        payload: res.data
-      })
-    )
+    .then(res => dispatch(getNeeds()))
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
@@ -85,12 +73,7 @@ export const getMyNeeds = () => dispatch => {
 export const releaseNeed = (needId, orgId) => dispatch => {
   axios
     .get(`${Route}/Need/ReleaseNeed?needId=${needId}&orgId=${orgId}`)
-    .then(res =>
-      dispatch({
-        type: RELEASE_NEED,
-        payload: res.data
-      })
-    )
+    .then(res => dispatch(getMyNeeds()))
     .catch(err =>
       dispatch({
         type: GET_ERRORS,

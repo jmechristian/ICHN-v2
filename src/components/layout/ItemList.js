@@ -31,7 +31,13 @@ const ItemList = props => {
                   {item.OrganizationId}
                 </td>
                 <td className={`w-1/4 ml-4 text-center ${props.textColor}`}>
-                  <button>
+                  <button
+                    onClick={props.onClick.bind(
+                      this,
+                      item.Id,
+                      item.OrganizationId
+                    )}
+                  >
                     <FontAwesomeIcon icon={props.iconType} size="2x" />
                   </button>
                 </td>

@@ -26,7 +26,7 @@ export default function(state = initialState, action) {
       };
     case CLAIM_NEED:
       return {
-        ...state
+        state
       };
     case GET_MY_NEED:
       return {
@@ -34,9 +34,7 @@ export default function(state = initialState, action) {
         myNeeds: action.payload
       };
     case RELEASE_NEED:
-      return {
-        ...state
-      };
+      return state;
     default:
       return state;
   }
