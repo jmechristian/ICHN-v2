@@ -24,7 +24,7 @@ const OpenItems = () => {
   return (
     <div className="flex flex-row">
       <Sidebar />
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col flex-grow">
         <DashboardHeader username={user.unique_name} />
         <div className="flex flex-grow flex-col bg-gray-200 py-6 px-10">
           <ItemList

@@ -25,7 +25,7 @@ const MyItems = () => {
   );
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row max-w-full min-h-screen">
       <Sidebar />
       <div className="flex flex-grow flex-col">
         <DashboardHeader username={user.unique_name} />
