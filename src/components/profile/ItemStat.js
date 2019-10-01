@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const ItemStat = props => {
   const { name } = props;
   return (
-    <div className="flex w-1/3 bg-white shadow-xl mx-3 p-8 rounded items-center">
+    <div className="flex md:w-1/3 w-full bg-white shadow-xl mx-3 p-8 rounded items-center mb-4 md:mb-0">
       <div className="mr-8 text-blue-400">
         <FontAwesomeIcon icon={name} size="3x" />
       </div>

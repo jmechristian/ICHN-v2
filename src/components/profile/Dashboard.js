@@ -37,7 +37,7 @@ const Dashboard = () => {
           <div className="text-2xl font-semibold text-gray-800 ml-3 mb-4">
             User Dashboard
           </div>
-          <div className="flex flex-grow justify-center">
+          <div className="flex flex-grow justify-center flex-wrap md:flex-no-wrap">
             <ItemStat
               title="My Items"
               name={faAddressCard}
@@ -55,12 +55,12 @@ const Dashboard = () => {
             />
           </div>
         </div>
-        <div className="w-full mt-4 mb-4">
-          <div className="flex flex-row">
-            <div className="flex-grow w-2/3">
+        <div className="md:mt-4 mb-4">
+          <div className="flex flex-row flex-wrap">
+            <div className="flex-grow w-full md:w-2/3 mb-4 md:mb-0">
               <MyItemList items={myNeeds} />
             </div>
-            <div className="flex flex-col w-1/3">
+            <div className="flex flex-col mt-4 md:mt-0 w-full md:w-1/3 flex-wrap">
               <MyOrgs orgs={following} />
               <AvailableOrgs />
             </div>
