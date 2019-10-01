@@ -12,14 +12,12 @@ const DashboardHeader = props => {
 
   return (
     <div className="flex h-16 items-center shadow z-20">
-      <div className="flex flex-grow flex-row-reverse px-6 items-center">
-        <div className="flex border-l border-gray-400 items-center h-8">
-          <span className="mr-3 ml-6 text-gray-600">
-            Hello, {props.username}
-          </span>
+      <div className="flex w-full flex-row px-2 md:px-6 items-center justify-center md:justify-end">
+        <div className="flex border-r border-gray-400 items-center h-8 pr-4">
+          <span className="mx-3 text-gray-600">Hello, {props.username}</span>
           <ion-icon name="contact" size="large"></ion-icon>
         </div>
-        <div className="flex mr-6">
+        <div className="flex ml-6">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={onLogoutClick}
