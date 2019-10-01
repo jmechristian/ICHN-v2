@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
-    <div className="min-h-screen w-1/8">
-      <div className="flex h-16 bg-blue-900 items-center shadow z-20  px-12 ">
+    <div className="min-h-screen w-2/12">
+      <div className="flex h-16 bg-blue-900 justify-center items-center shadow z-20">
         <span className="font-bold uppercase tracking-wider text-white">
           iCanHelpNetwork
         </span>
       </div>
       <div className="flex min-h-screen bg-blue-800 text-blue-400 justify-center">
-        <ul className="flex flex-col my-4">
+        <ul className="flex flex-col my-6">
           <li className="flex py-5 items-center">
             <ion-icon name="contact" size="large"></ion-icon>
             <span className="ml-2 text-white">My Profile</span>
