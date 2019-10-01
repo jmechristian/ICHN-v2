@@ -27,9 +27,9 @@ const MyItems = () => {
   return (
     <div className="flex flex-row max-w-full min-h-screen">
       <Sidebar />
-      <div className="flex flex-grow flex-col">
+      <div className="flex flex-col w-10/12">
         <DashboardHeader username={user.unique_name} />
-        <div className="flex flex-grow flex-col bg-gray-200 py-6 px-10">
+        <div className="flex flex-grow flex-col bg-gray-200 px-4 py-6 md:px-10">
           <ItemList
             items={myNeeds}
             buttonName={'Release'}

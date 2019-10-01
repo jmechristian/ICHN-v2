@@ -5,7 +5,7 @@ import Dashboard from '../profile/Dashboard';
 
 const DashboardContainer = () => {
   return (
-    <div className="flex flex-grow max-w-full min-h-screen">
+    <div className="flex">
       <Sidebar />
       <Dashboard />
     </div>

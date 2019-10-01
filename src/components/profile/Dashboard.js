@@ -30,9 +30,9 @@ const Dashboard = () => {
   }, [dispatch]);
 
   return (
-    <div className="flex flex-grow flex-col">
+    <div className="flex flex-col w-10/12">
       <DashboardHeader username={user.unique_name} />
-      <div className="flex flex-grow flex-col bg-gray-200 py-6 px-10">
+      <div className="flex flex-grow flex-col bg-gray-200 px-4 py-6 md:px-10">
         <div className="w-full mt-2 mb-4">
           <div className="text-2xl font-semibold text-gray-800 ml-3 mb-4">
             User Dashboard
