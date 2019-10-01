@@ -26,7 +26,7 @@ const OpenItems = () => {
       <Sidebar />
       <div className="flex flex-col w-full">
         <DashboardHeader username={user.unique_name} />
-        <div className="bg-gray-200 p-10 h-full">
+        <div className="flex flex-grow flex-col bg-gray-200 py-6 px-10">
           <ItemList
             items={needs}
             buttonName={'Claim'}
