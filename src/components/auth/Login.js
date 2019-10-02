@@ -29,6 +29,7 @@ export class Login extends Component {
 
   onSubmit = e => {
     e.preventDefault();
+    this.input.blur();
 
     const user = {
       Email: this.state.Email,
