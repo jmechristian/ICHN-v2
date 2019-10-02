@@ -92,7 +92,7 @@ export class Login extends Component {
             <div className="flex flex-wrap items-center justify-center mt-16">
               <button
                 onClick={this.onSubmit}
-                className="max-w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 mx-2 mb-4 rounded focus:outline-none focus:shadow-outline"
+                className="max-w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 mx-2 rounded focus:outline-none focus:shadow-outline"
                 type="submit"
               >
                 Sign In
