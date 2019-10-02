@@ -29,7 +29,6 @@ export class Login extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    this.input.blur();
 
     const user = {
       Email: this.state.Email,
@@ -59,7 +58,7 @@ export class Login extends Component {
           </span>
         </div>
         <div className="w-full max-w-md">
-          <form onSubmit={this.onSubmit}>
+          <form>
             <div className="flex items-center border-b border-b-2 border-gray-400 py-2 mb-8">
               <input
                 className="validate appearance-none bg-transparent border-none w-full text-gray-700 py-1 px-2 leading-tight focus:outline-none"
@@ -92,6 +91,7 @@ export class Login extends Component {
             </div>
             <div className="flex flex-wrap items-center justify-center mt-16">
               <button
+                onClick={this.onSubmit}
                 className="max-w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 mx-2 mb-4 rounded focus:outline-none focus:shadow-outline"
                 type="submit"
               >
