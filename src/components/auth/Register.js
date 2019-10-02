@@ -36,7 +36,7 @@ export class Register extends Component {
     return (
       <>
         <div className="mb-4">
-          <span className="font-bold text-4xl uppercase tracking-wider text-gray-800">
+          <span className="font-bold text-3xl md:text-4xl uppercase tracking-wider text-gray-800">
             iCanHelpNetwork
           </span>
         </div>
@@ -48,7 +48,7 @@ export class Register extends Component {
 
         <form className="w-full max-w-lg" onSubmit={this.onSubmit}>
           <div className="flex flex-wrap items-center ">
-            <div className="border-b border-b-2 border-gray-400 mx-2 flex-grow">
+            <div className="border-b border-b-2 border-gray-400 mx-2 flex-grow mb-12 md:mb-0">
               <input
                 className="validate appearance-none bg-transparent border-none w-full text-gray-700 py-2 px-2 leading-tight focus:outline-none"
                 name="FirstName"

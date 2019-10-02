@@ -48,11 +48,11 @@ export class Login extends Component {
     return (
       <>
         <div className="mb-4">
-          <span className="font-bold text-4xl uppercase tracking-wider text-gray-800">
+          <span className="font-bold text-3xl md:text-4xl uppercase tracking-wider text-gray-800">
             iCanHelpNetwork
           </span>
         </div>
-        <div className="mb-16">
+        <div className="mb-16 text-center">
           <span className="text-gray-500">
             Welcome back! Please login to your account.
           </span>
@@ -89,9 +89,9 @@ export class Login extends Component {
                 data-success=" "
               />
             </div>
-            <div className="flex items-center justify-center mt-16">
+            <div className="flex flex-wrap items-center justify-center mt-16">
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 mx-2 rounded focus:outline-none focus:shadow-outline"
+                className="max-w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 mx-2 mb-4 rounded focus:outline-none focus:shadow-outline"
                 type="submit"
               >
                 Sign In

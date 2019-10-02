@@ -46,11 +46,11 @@ export class ForgotPassword extends Component {
     return (
       <>
         <div className="mb-4">
-          <span className="font-bold text-4xl uppercase tracking-wider text-gray-800">
+          <span className="font-bold md:text-4xl text-3xl uppercase tracking-wider text-gray-800">
             iCanHelpNetwork
           </span>
         </div>
-        <div className="mb-16">
+        <div className="mb-16 text-center">
           <span className="text-gray-500">
             Please enter the email you used to register with.
           </span>
