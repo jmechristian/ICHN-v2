@@ -89,22 +89,22 @@ export class Login extends Component {
                 data-success=" "
               />
             </div>
-            <div className="flex flex-wrap items-center justify-center mt-16">
-              <button
-                onClick={this.onSubmit}
-                className="max-w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 mx-2 rounded focus:outline-none focus:shadow-outline"
-                type="submit"
-              >
-                Sign In
-              </button>
-              <button
-                className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-12 mx-2 border border-blue-500 hover:border-transparent rounded"
-                type="button"
-              >
-                <Link to="/register">Sign up</Link>
-              </button>
-            </div>
           </form>
+          <div className="flex flex-wrap items-center justify-center mt-16">
+            <button
+              onClick={this.onSubmit}
+              className="max-w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 mx-2 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Sign In
+            </button>
+            <button
+              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-12 mx-2 border border-blue-500 hover:border-transparent rounded"
+              type="button"
+            >
+              <Link to="/register">Sign up</Link>
+            </button>
+          </div>
           <p>{this.props.error}</p>
           <div className="flex items-center justify-center my-12 text-sm text-gray-700">
             <Link to="/reset-password">Forgot Password?</Link>
