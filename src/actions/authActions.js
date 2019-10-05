@@ -7,8 +7,36 @@ import {
   GET_ERRORS,
   SET_FOLLOWING,
   REMOVE_ORG,
-  FOLLOW_ORG
+  FOLLOW_ORG,
+  GET_DATA,
+  UPDATE_PASSWORD
 } from './types';
+
+//Get User Info
+export const getData = () => {
+  return async dispatch => {
+    try {
+      const response = await axios.get(`${Route}/User/GetMyData`);
+      const resData = await response.data;
+      dispatch({ type: GET_DATA, payload: resData });
+    } catch (err) {
+      throw err;
+    }
+  };
+};
+
+//Update Password
+export const updatePassword = updatedUser => {
+  return async dispatch => {
+    try {
+      const response = axios.post(`${Route}/User/ChangePassword`, updatedUser);
+      const resData = await response.data;
+      dispatch({ type: UPDATE_PASSWORD, payload: resData });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
 
 //Register User
 export const registerUser = (newUser, history) => dispatch => {

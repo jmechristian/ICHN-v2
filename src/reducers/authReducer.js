@@ -2,14 +2,17 @@ import {
   SET_CURRENT_USER,
   SET_FOLLOWING,
   REMOVE_ORG,
-  FOLLOW_ORG
+  FOLLOW_ORG,
+  GET_DATA,
+  UPDATE_PASSWORD
 } from '../actions/types';
 import isEmpty from '../utils/isEmpty';
 
 const initialState = {
   isAuthenticated: false,
   user: {},
-  following: []
+  following: [],
+  myUser: {}
 };
 
 export default function(state = initialState, action) {
@@ -19,6 +22,15 @@ export default function(state = initialState, action) {
         ...state,
         isAuthenticated: !isEmpty(action.payload),
         user: action.payload
+      };
+    case GET_DATA:
+      return {
+        ...state,
+        myUser: action.payload
+      };
+    case UPDATE_PASSWORD:
+      return {
+        ...state
       };
     case SET_FOLLOWING:
       return {

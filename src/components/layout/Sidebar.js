@@ -15,9 +15,11 @@ const Sidebar = () => {
             <Link to="/profile">
               <ion-icon name="contact" size="large"></ion-icon>
             </Link>
-            <span className="ml-2 text-white invisible md:visible">
-              My Profile
-            </span>
+            <Link to="/profile">
+              <span className="ml-2 text-white invisible md:visible">
+                My Profile
+              </span>
+            </Link>
           </li>
           <li className="flex md:py-5 items-center flex-col md:flex-row">
             <Link to="/dashboard">

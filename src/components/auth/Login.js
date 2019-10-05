@@ -1,13 +1,16 @@
-import React, { useEffect, useCallback, useReducer } from 'react';
+import React, { useEffect, useCallback, useReducer, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 import { loginUser } from '../../actions/authActions';
 
 const LoginForm = props => {
-  //   const [passwordMasked, setPasswordMasked] = useState(true);
+  const [passwordMasked, setPasswordMasked] = useState(true);
 
   const { isAuthenticated } = useSelector(state => state.auth);
+  const { message } = useSelector(state => state.error);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -34,11 +37,9 @@ const LoginForm = props => {
     dispatchAction(loginUser(user));
   });
 
-  //   const togglePasswordMask = () => {
-  //     this.setState(prevState => ({
-  //       passwordIsMasked: !prevState.passwordIsMasked
-  //     }));
-  //   };
+  const togglePasswordMask = () => {
+    setPasswordMasked(!passwordMasked);
+  };
 
   return (
     <>
@@ -69,11 +70,11 @@ const LoginForm = props => {
               data-success=" "
             />
           </div>
-          <div className="flex items-center border-b border-b-2 border-gray-400 py-2 mb-12">
+          <div className="flex items-center border-b border-b-2 border-gray-400 py-2 mb-4">
             <input
               className="validate appearance-none bg-transparent border-none w-full text-gray-700 py-1 px-2 leading-tight focus:outline-none"
               name="Password"
-              type="password"
+              type={passwordMasked ? 'password' : 'text'}
               placeholder="Password"
               value={password}
               onChange={e => setPassword(e.target.value)}
@@ -85,6 +86,10 @@ const LoginForm = props => {
             />
           </div>
         </form>
+        <div className="text-gray-600 flex justify-end items-center md:mr-2">
+          <span className="text-xs mr-1">Password</span>
+          <FontAwesomeIcon icon={faEye} onClick={togglePasswordMask} />{' '}
+        </div>
         <div className="flex flex-wrap items-center justify-center mt-16">
           <button
             onClick={onSubmit}
@@ -100,8 +105,10 @@ const LoginForm = props => {
             <Link to="/register">Sign up</Link>
           </button>
         </div>
-        {/* <p>{this.props.error}</p> */}
-        <div className="flex items-center justify-center my-12 text-sm text-gray-700">
+        <div className="text-center w-full my-4 text-sm text-red-600">
+          <p>{message}</p>
+        </div>
+        <div className="flex items-center justify-center my-12 text-sm text-gray-600">
           <Link to="/reset-password">Forgot Password?</Link>
         </div>
       </div>

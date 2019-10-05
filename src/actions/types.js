@@ -10,3 +10,5 @@ export const GET_ITEM = 'GET_ITEM';
 export const CLAIM_NEED = 'CLAIM_NEED';
 export const GET_MY_NEED = 'GET_MY_NEED';
 export const RELEASE_NEED = 'RELEASE_NEED';
+export const GET_DATA = 'GET_DATA';
+export const UPDATE_PASSWORD = 'UPDATE_PASSWORD';
