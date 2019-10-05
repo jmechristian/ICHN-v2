@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import Login from '../auth/Login';
 
@@ -18,4 +19,4 @@ const AuthLogin = () => {
   );
 };
 
-export default AuthLogin;
+export default withRouter(AuthLogin);
