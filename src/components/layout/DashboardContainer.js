@@ -1,10 +1,11 @@
 import React from 'react';
-import Sidebar from '../layout/Sidebar';
+
+import Sidebar from './Sidebar';
 import Dashboard from '../profile/Dashboard';
 
 const DashboardContainer = () => {
   return (
-    <div className='flex flex-row'>
+    <div className="flex">
       <Sidebar />
       <Dashboard />
     </div>
